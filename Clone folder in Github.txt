@@ -6,8 +6,6 @@
 5.	Click Create Repository.
 GitHub will now show you a repository URL (e.g., https://github.com/username/MyProject.git). Keep this URL handy.
 
-https://github.com/jrsousa2/VS_code
-________________________________________
 
 CLEANS CACHE 
 git rm -r --cached .
@@ -55,51 +53,5 @@ git branch
 6.	Commit the files:
 git commit -m "Initial commit"
 
-________________________________________
-
-
-
-
-Check the branch
-D:\iTunes>git branch
-* master
-INCREASE SIZE OF BUFFER BEFORE PUSHING
-
-git config http.postBuffer 524288000
-
-2.	Push the files to GitHub: (DON'T USE MASTER, USE MAIN, THE SITE SAYS)
-VERBOSE MODE
-set GIT_TRACE=1 
-
-git push -u origin main
-
-IF THERE ARE CONFLICTS, RESOLVE THEM WITH
-git pull origin main --allow-unrelated-histories
-THIS COULD HAPPEN IF THERE IS A FILE IN THE REMOTE REPO THAT DOESN'T EXIST IN THE LOCAL REPO
-
-
-
-
-________________________________________
-REDO – REFRESH .gitignore
-DELETE THE PHYSICAL FOLDER IF NEEDED
-rmdir /s /q .git 
-git rm -r --cached .
-git add .gitignore
-git commit -m "Update .gitignore and remove ignored files"
-
-4. Verify on GitHub
-Go to your GitHub repository in your browser, and you should see all your files there!
-
-DELETE UPDATED REMOTE FILE SO THAT CALLING THE BATCH DOESN'T FAIL
-•  git rm --cached README.md
-The --cached option ensures that the file is only removed from the remote, not your local repository.
-•  Commit the change:
-After running the above command, commit the change:
-git commit -m "Remove README.md from remote"
-•  Push the change to the remote repository:
-Finally, push the changes to the remote repository:
-git push origin main
-
-NOW RUN THE BAT FILE AGAIN AND THE FILES WILL BE SYNCED AGAIN
-
+# BETTER TO USE THE BATCH SCRIPT INSTEAD OF THESE INSTRUCTIONS, 
+# AFTER VERIFYING THAT CREDENTIALS ARE FINE IN THE CMD PROMPT
