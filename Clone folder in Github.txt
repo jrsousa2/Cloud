@@ -1,0 +1,105 @@
+1. Create a Repository on GitHub
+1.	Go to GitHub and log in.
+2.	Click New Repository.
+3.	Set a name (e.g., MyProject) and choose public/private.
+4.	Don't initialize with a README, .gitignore, or license (you'll add those later).
+5.	Click Create Repository.
+GitHub will now show you a repository URL (e.g., https://github.com/username/MyProject.git). Keep this URL handy.
+
+https://github.com/jrsousa2/VS_code
+________________________________________
+
+CLEANS CACHE 
+git rm -r --cached .
+
+1.	Open a terminal and navigate to your folder:
+cd /path/to/your/folder
+
+2. Initialize Git in Your Local Folder
+git init
+
+3.	VERIFY WHAT WAS STAGED 
+ls -a
+git status
+
+VERIFY IDENTITY (it may already have these creds)
+
+git config --global user.name 
+git config --global user.email
+
+IDENTIFY USER (not needed if already identified)
+
+git config --global user.email jrsousa2@hotmail.com
+git config --global user.name "Jose Risomar Sousa"
+
+4. Link Your Local Folder to GitHub
+4.1	Add the GitHub repository as the remote origin:
+Replace URL with your actual repo URL.
+
+git remote add origin https://github.com/jrsousa2/Snowflake
+
+4.2	VERIFY REMOTE REPO 
+git remote -v
+
+5.	Add all files in the folder to Git:
+git add .
+
+
+ISSUE THIS CMD PER THE GITHUB SITE
+git branch -M main
+
+CHECK BRANCH
+git branch
+
+
+6.	Commit the files:
+git commit -m "Initial commit"
+
+________________________________________
+
+
+
+
+Check the branch
+D:\iTunes>git branch
+* master
+INCREASE SIZE OF BUFFER BEFORE PUSHING
+
+git config http.postBuffer 524288000
+
+2.	Push the files to GitHub: (DON'T USE MASTER, USE MAIN, THE SITE SAYS)
+VERBOSE MODE
+set GIT_TRACE=1 
+
+git push -u origin main
+
+IF THERE ARE CONFLICTS, RESOLVE THEM WITH
+git pull origin main --allow-unrelated-histories
+THIS COULD HAPPEN IF THERE IS A FILE IN THE REMOTE REPO THAT DOESN'T EXIST IN THE LOCAL REPO
+
+
+
+
+________________________________________
+REDO – REFRESH .gitignore
+DELETE THE PHYSICAL FOLDER IF NEEDED
+rmdir /s /q .git 
+git rm -r --cached .
+git add .gitignore
+git commit -m "Update .gitignore and remove ignored files"
+
+4. Verify on GitHub
+Go to your GitHub repository in your browser, and you should see all your files there!
+
+DELETE UPDATED REMOTE FILE SO THAT CALLING THE BATCH DOESN'T FAIL
+•  git rm --cached README.md
+The --cached option ensures that the file is only removed from the remote, not your local repository.
+•  Commit the change:
+After running the above command, commit the change:
+git commit -m "Remove README.md from remote"
+•  Push the change to the remote repository:
+Finally, push the changes to the remote repository:
+git push origin main
+
+NOW RUN THE BAT FILE AGAIN AND THE FILES WILL BE SYNCED AGAIN
+
