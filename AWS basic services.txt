@@ -1,0 +1,69 @@
+VPC (virtual private cloud)
+A virtual network you define in AWS
+Provides network isolation and security
+Like your office building/network layout
+Defining IP ranges, subnets, firewalls (ACLs)
+EC2, RDS, Lambda, EKS, etc.
+It's free, you pay for data transfer
+
+EC2 (elastic compute cloud)
+It's launched within a VPC
+You choose the OS (Linux/Windows), CPU, memory, and storage - 
+then you launch your instance and connect via SSH or RDP. 
+It’s super flexible and scalable.
+
+S3 bucket (simple storage service)
+-- remote folders to store data files
+encrypted in transit and at rest for data protection
+
+Amazon RDS (relational db service)
+relational database services (in various flavors)
+Sql server, to oracle, to MySql, to PostgreSql
+
+Amazon Redshift
+Used for data warehousing (fast SQL based and great for BI)
+
+Route 53 (dns domain name system)
+aliases to URL's that make it easier to launch a site
+
+CloudFront 
+speeds up deivery of website content using cached copies
+
+AWS Glue
+serverless ETL
+
+IAM (identity and access management)
+
+AWS Lambda
+AWS Lambda is a serverless compute service that lets you run code without provisioning 
+or managing servers. You just write your function, upload it, and AWS runs it only 
+when triggered, automatically scaling as needed.
+
+How Lambda works:
+You write a function → upload to Lambda → trigger it via:
+API call (via API Gateway)
+File upload to S3
+New record in DynamoDB
+Scheduled event (like a cron job)
+
+Lambda example:
+def lambda_handler(event, context):
+    print("New file uploaded to S3!")
+    # download, resize, upload the thumbnail
+
+Audit
+
+AWS CloudWatch
+for monitoring and logging
+
+Infrastructure security
+
+EFS (elastic file system)
+File storage (like a traditional file system)
+fully managed, scalable file storage service 
+shared file storage that can be accessed by multiple EC2 instances simultaneously.
+Performance Low-latency, file system performance (for file-level operations)
+Access Control	File system permissions and POSIX access control
+
+Storage gateway (if I want to move data from local env to the cloud
+and want to keep a copy of the data locally)

@@ -1,0 +1,46 @@
+S3 is a cloud storage in AWS
+Object storage (for storing files as objects)
+Performance Designed for high-throughput and large data retrieval
+Access Control Bucket-level access control via IAM policies and ACLs
+Can be used even for db backup
+and data processing pipelines
+Core concepts: bucket (name needs to be unique) 
+Bucket works like a windows folder, like a file system
+Obects are contents inside of the bucket
+
+In a bucket, objects can be accessed in the bucket by URL
+ex: https://s3.amazonaws.com/<bucket_name>/<object_name>
+access thru URL only works if the bucket is publicly exposed
+by default public access is disabled
+
+Can be access from python: Python Boto3 SDK
+s3client = boto3.client('s3')
+myobject = s3Client.get_object(bucket='bucket_name', key='object_name')
+
+Buckets can be accessed thru the AWS UI as well
+
+To avoid high costs in S3, more recent data can be classified 
+as standard tier (hot data), and as it gets older, it moves to Glacier (rare)
+Glacier pays less for storage
+
+Lifecycle rules can be used to automate the promotion or demotion of data
+files between tiers (from hot to cold, pricier to cheaper)
+Rules specify after a file has been uploaded how long they show stay in a tier
+E.g., after 30 days it should move to infrequent, and after 90 days to Glacier
+
+data pipelines can be set up with the aid of other AWS products
+can be done with the UI console, configuration based
+
+S3 has events, triggers for when data is available
+notifications for whenever objects are created, modified, deleted, etc
+
+Data security is very important to avoid leaks (custodian needs to be careful)
+The settings on the S3 bucket are very important
+User needs to avoid setting errors (misconfigurations)
+
+Amazon Athena is an analytics tool that integrates wth S3
+SQL style queries on all the content
+
+Elastic block store are SSD hard drives (attached to EC2 instances - virtual servers)
+
+
