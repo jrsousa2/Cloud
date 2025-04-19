@@ -66,6 +66,7 @@ AWS Lambda
 AWS Lambda is a serverless compute service that lets you run code without provisioning 
 or managing servers. You just write your function, upload it, and AWS runs it only 
 when triggered, automatically scaling as needed.
+Lambda -> functions as a service
 
 How Lambda works:
 You write a function → upload to Lambda → trigger it via:
@@ -83,7 +84,7 @@ Audit
 
 AWS CloudWatch
 app and infrastructure monitoring
-checks how the whole ecosystem is doing (load, usage, space)
+checks how the whole ecosystem is doing (load, usage, space, security)
 for monitoring and logging
 Can be used to set alarms and send alert if some action is needed
 
