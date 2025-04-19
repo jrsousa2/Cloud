@@ -6,11 +6,19 @@ Defining IP ranges, subnets, firewalls (ACLs)
 EC2, RDS, Lambda, EKS, etc.
 It's free, you pay for data transfer
 
-EC2 (elastic compute cloud)
+EC2 (elastic compute cloud) (aka VM - virtual machine)
 It's launched within a VPC
 You choose the OS (Linux/Windows), CPU, memory, and storage - 
 then you launch your instance and connect via SSH or RDP. 
 It’s super flexible and scalable.
+
+Elastic Block Store (EBS)
+A virtual hard drive that you can attach to a virtual machine.
+SSD hard drives (attached to EC2 instances - virtual servers)
+block-level storage service designed to work with EC2 (VM) instances
+EBS can be backed-up to S3
+EBS scaling is not fully auto-managed
+It has an auto-scaling feature
 
 S3 bucket (simple storage service)
 -- remote folders to store data files
@@ -20,8 +28,28 @@ Amazon RDS (relational db service)
 relational database services (in various flavors)
 Sql server, to oracle, to MySql, to PostgreSql
 
+DynamoDB (non-relational db)
+schema-less
+You can store documents with different structures in the same table.
+Example of a DynamoDb db record (it's a json file or a dictionary type):
+{
+  "UserID": "12345",
+  "Name": "John Doe",
+  "Age": 30,
+  "Address": {
+    "Street": "123 Main St",
+    "City": "Anytown",
+    "PostalCode": "12345"
+  },
+  "Hobbies": ["Reading", "Traveling", "Sports"]
+}
+
 Amazon Redshift
 Used for data warehousing (fast SQL based and great for BI)
+
+Amazon Athena is an analytics tool that integrates wth S3
+SQL style queries on all the content
+
 
 Route 53 (dns domain name system)
 aliases to URL's that make it easier to launch a site
@@ -54,9 +82,10 @@ def lambda_handler(event, context):
 Audit
 
 AWS CloudWatch
+app and infrastructure monitoring
+checks how the whole ecosystem is doing (load, usage, space)
 for monitoring and logging
-
-Infrastructure security
+Can be used to set alarms and send alert if some action is needed
 
 EFS (elastic file system)
 File storage (like a traditional file system)
@@ -67,3 +96,5 @@ Access Control	File system permissions and POSIX access control
 
 Storage gateway (if I want to move data from local env to the cloud
 and want to keep a copy of the data locally)
+
+Infrastructure security

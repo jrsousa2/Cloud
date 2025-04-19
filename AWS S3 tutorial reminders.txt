@@ -37,10 +37,3 @@ notifications for whenever objects are created, modified, deleted, etc
 Data security is very important to avoid leaks (custodian needs to be careful)
 The settings on the S3 bucket are very important
 User needs to avoid setting errors (misconfigurations)
-
-Amazon Athena is an analytics tool that integrates wth S3
-SQL style queries on all the content
-
-Elastic block store are SSD hard drives (attached to EC2 instances - virtual servers)
-
-
