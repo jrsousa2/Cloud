@@ -20,7 +20,8 @@ EBS can be backed-up to S3
 EBS scaling is not fully auto-managed
 It has an auto-scaling feature
 
-S3 bucket (simple storage service)
+S3 (simple storage service)
+an S3 bucket is a folder
 -- remote folders to store data files
 encrypted in transit and at rest for data protection
 
@@ -60,7 +61,7 @@ speeds up deivery of website content using cached copies
 AWS Glue
 serverless ETL
 
-IAM (identity and access management)
+AWS IAM (identity and access management)
 
 AWS Lambda
 AWS Lambda is a serverless compute service that lets you run code without provisioning 

@@ -1,0 +1,67 @@
+Is run with an EC2 (called a virtual warehouse in Snowflake)
+virtual warehouse comes from say AWS
+
+warehouses come in t-shirt sizes: s-mall to XXX-large
+computing power roguhly double at every size level
+and so does consuption increase and cost
+
+Is used for
+executing sql select statements
+performing delete, insert, update
+
+loading data into tables
+copy into <table>
+
+unloading data from tables
+copy into <locations>
+
+A simple create warehouse statement
+
+create or replace warehouse my_wh
+
+wharehouse_size = large;
+
+additional settings
+auto_suspend = 900
+auto_resume = true
+initially_suspended = false
+
+min_cluster_count = 1
+max_cluster_count = 10
+
+
+In the web UI there's a menu called Virtual Warehouse
+Create warehouse
+alter warehouse
+describe warehouse
+drop warehouse
+use warehouse
+show warehouses
+
+
+Each task or query is executed in a single virtual warehouse
+
+Multiple virtual warehouses and/or user can simmultaneously 
+read write and update data in the storage layer
+conflicts are resolved by the transation manager in the cloud service
+
+
+DDL	Structure	CREATE, ALTER, DROP, TRUNCATE
+DML	Data	    SELECT, INSERT, UPDATE, DELETE
+DCL	Permissions	GRANT, REVOKE
+
+Security Manager (IAM)
+Snowflake can authenticate a user with the following:
+
+SCIM (cross-domain identity mnagement). E.g. Azure AD
+MFA (multi-factor)
+Oauth (enables 3rd-party apps to authenticate user)
+SSO (single sign-on)
+
+Sql transactions in Snowflake can 
+be done in blocks using begin to avoid conflicts 
+
+Query optimized in Snowflake
+manages metadata and micro partitions and distributes
+query among warehouses to speed up processing
+Reminder that data is stored in columnar format
