@@ -1,0 +1,13 @@
+Spark Architecture
+RDD (Resilient Distributed Dataset): Basic understanding of how data is distributed 
+and processed in Spark.
+
+DAG (Directed Acyclic Graph): Understanding how Spark jobs are broken down 
+into tasks and stages.
+
+Executor: Knowing what executors are, how they run tasks, and their memory management.
+
+Driver: Where the Spark context runs and coordinates jobs.
+
+Cluster Manager: Understanding how Spark interacts with cluster managers like YARN, Mesos, 
+or Kubernetes.
