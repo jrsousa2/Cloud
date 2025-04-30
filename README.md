@@ -1,8 +1,9 @@
 ### Snowflake, Databricks and cloud computing basics
 
-This repo contains quick references on usage of simple Snowflake commands such as snowsql and snowsight.
+Quick references on usage of simple Snowflake commands such as snowsql and snowsight.
+Ditto Databricks.
 
-**And below a quick compare of AWS, GCP and Azure services.**
+**Below a quick compare of AWS, GCP and Azure services.**
 
 
 | Category                | AWS                                           | GCP                                              | Azure                                |

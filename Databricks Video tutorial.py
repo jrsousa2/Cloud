@@ -1,3 +1,4 @@
+# Video by Adam Marczak
 # Databricks notebook source
 blob_account_name = "azureopendatastorage"
 blob_container_name = "citydatacontainer"
