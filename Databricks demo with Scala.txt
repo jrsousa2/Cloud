@@ -1,0 +1,59 @@
+// Databricks notebook source
+val containerName = "<container_name>"
+val storageAccountName = "<storage_account_name>"
+val sas = "<sas_token>"
+
+val url = "wasbs://" + containerName + "@" + storageAccountName + ".blob.core.windows.net/"
+var config = "fs.azure.sas." + containerName + "." + storageAccountName + ".blob.core.windows.net"
+
+// Using databricks utilities, mount Blob storage
+// This command mounts an Azure Blob Storage container into Databricks File System (DBFS), 
+// so that the contents of the cloud storage can be accessed like a local file syste (like a regular local folder)
+dbutils.fs.mount(
+  source = url,
+  mountPoint = "/mnt/staging",
+  extraConfigs = Map(config -> sas))
+
+
+// Loads json file in Blob storage into a variable
+
+val df = spark.read.json("/mnt/staging/small_radio_json.json")
+display(df)
+
+// Select only a few cols from the previous df var
+
+val specificColumnsDf = df.select("firstname", "lastname", "gender", "location", "level")
+display(specificColumnsDf)
+
+// Rename col level to subscription_type
+
+val renamedColumnsDF = specificColumnsDf.withColumnRenamed("level", "subscription_type")
+display(renamedColumnsDF)
+
+// Create a view from the last command
+
+renamedColumnsDF.createOrReplaceTempView("renamed")
+
+// COMMAND ----------
+
+// MAGIC %sql
+// MAGIC SELECT 
+// MAGIC    count(*) as count,
+// MAGIC    subscription_type
+// MAGIC FROM renamed
+// MAGIC GROUP BY 
+// MAGIC    subscription_type
+
+// Stores the result of SQL query in a variable
+
+val aggregate = spark.sql("""
+SELECT 
+   count(*) as count,
+   subscription_type
+FROM renamed
+GROUP BY 
+   subscription_type
+""")
+
+// Writes the SQL query result stored into the variable to a csv file in the Blob storage container
+aggregate.write.mode("overwrite").csv("/mnt/staging/output/aggregate.csv")
