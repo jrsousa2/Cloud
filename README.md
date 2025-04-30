@@ -13,7 +13,7 @@ Quick references on usage of simple Snowflake commands such as snowsql and snows
 | Block Storage            | EBS                                           | Persistent Disks                                | Azure Disks                         |
 | Container Management     | ECS / EKS                                     | Cloud Run / GKE                                  | Azure Kubernetes Service      |
 | Serverless Compute       | Lambda                                        | Cloud Functions                                  | Azure Functions                     |
-| Object Storage           | S3                                            | Cloud Storage                                    | Azure Blob Storage / (ADLS)                 |
+| Object Storage           | S3                                            | Cloud Storage                                    | Blob Storage / Data Lake Storage |
 | File Storage             | EFS                                           | Filestore                                        | Azure Files                         |
 | Load Balancer            | Elastic Load Balancing (ELB)                  | Cloud Load Balancing                             | Azure Load Balancer                 |
 | DNS                      | Route 53                                      | Cloud DNS                                        | Azure DNS                           |
