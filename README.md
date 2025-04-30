@@ -1,7 +1,7 @@
 ### Snowflake, Databricks and cloud computing basics
 
 Quick references on usage of simple Snowflake commands such as snowsql and snowsight.
-Ditto Databricks.
+<br>Ditto Databricks.
 
 **Below a quick compare of AWS, GCP and Azure services.**
 
