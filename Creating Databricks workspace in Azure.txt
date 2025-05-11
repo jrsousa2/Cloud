@@ -1,0 +1,92 @@
+A Databricks workspace can be created both in Azure (more common) or in AWS.
+
+1) Go to Home. Then choose +Create a resource
+Look for Azure Databricks and click create.
+
+Pick a resource group (create New if doesn't exist)
+Anything that is provisioned in Azure must belong to a resource group.
+
+Created Resource Group: Jose_demo tied to Free trial.
+
+Created DB workspace as DB_wksp
+
+Took 4 minutes to create the DB_wksp
+
+It creates a VM on Azure that can be used to create a cluster
+of driver and workers that will run the Apache engine under the hood in a Databricks notebook.
+
+Pin the newly created workspace by clicking the Notification icon.
+
+Click Jose_demo (the RG)
+Down below click the name of the created workspace (DB_wksp)
+
+It will take you to a screen where you can launch DB by clicking Launch workspace
+By using that route you don't need to enter your credentials again.
+This is the SSO (single sign-on).
+
+Once in the DB portal, we need to create a cluster. Cluster was the old terminology, now it's referred to as Compute. Menu's have changed as well.
+
+When we create a cluster/compute, the workers or nodes each get a chunk of the data to work with (which is the so-called parallel processing or RDD - resilient distributed dataset).
+
+Note that if the cluster created has only 1 VM, that is the driver machine and there is no worker. Therefore, parallel computing can still be used among the multiple cores, but that is not distributed computing as the data can't be split among more than one machine.
+
+I named the Cluster Jose's cluster. Pick and choose the options, I picked the most simple settings to make it as cheap as possible.
+
+Note that there are options for the Worker and for the Driver machines.
+
+Summary
+1-1 Worker 16-16 GB Memory 4-4 Cores
+1 Driver 16 GB Memory, 4 Cores
+Runtime 15.4.x-scala2.12
+Unity Catalog Photon
+Standard_D4ds_v5 4 DBU/h
+
+It takes a few minutes for the cluster to be assigned to the hardware. The trial version doesn't allow more than 4 cores (so 1 VM only). If a workspace was created under a free subscription a new one needs to be created and launched (with pay-as-you-go).
+
+If you log off, when you log on again go to Compute menu to see the created cluster.
+
+TO FIX THE ISSUE OF NOT BEING ABLE TO CREATE A CLUSTER WITH 1 DRIVER/1 WORKER, I CHANGED THE SUBSCRIPTION .
+
+I also created new Resource Group called RG_Pay_as_you_go.
+
+I've also created a new Databricks workspace under new RG RG_Pay_as_you_go and upgraded non-free subscription. Need to be careful to not incur charges for either the hardware resources (clusters, driver and worker machines, cores, sotrage, etc.)
+
+New Databricks workspace is called DB_wkspc_not_free
+
+But it's still not working though if Policy is unrestricted.
+
+I just found that the reason is the subscription. It really needs to be pay-as-you-go or it won't work at all.
+
+In the tutorial he loads a csv file by clicking data. He used the dbfs (databricks file system, that is an Azure feature, not Databricks. It's for storage and works like a local
+file system it seems.
+The file doesn't need to be imported, it can be queried as is (schema on read, unlike a rdbs).
+
+After that a table can be created from the imported file.
+
+To create a notebook to read the table we just created, use the workspace icon to save under. Note this is not the same workspace definition as the DB workspace we created, which we use to launch it. Pick Python as language. SQL is also useful.
+
+** Databricks notebooks accept .md syntax **
+
+To switch between sql and python syntax, use %sql. It also accepts %fs (file system),
+%sh (shell scripting).
+
+Examples:
+
+%sql
+show tables
+describe table some_table (gives the layout)
+
+
+Notebooks need to be attached to a cluster so commands can be run.
+.dbc are binary files used for backup, migration, or sharing of notebooks between Databricks workspaces.
+
+You can add python libraries to Databricks (it takes time since it needs to be installed on the driver machine/VM - I guess)
+
+Delta like is like a column stored compressed format called parquet that has some of the benefits of a relational db.
+
+DB also has a Job scheduler. Like for ETL's or something.
+
+Lots of security settings and others to give the user full control.
+
+
+
