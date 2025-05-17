@@ -82,7 +82,7 @@ Notebooks need to be attached to a cluster so commands can be run.
 
 You can add python libraries to Databricks (it takes time since it needs to be installed on the driver machine/VM - I guess)
 
-Delta like is like a column stored compressed format called parquet that has some of the benefits of a relational db.
+Delta lake is like a column stored compressed format called parquet that has some of the benefits of a relational db.
 
 DB also has a Job scheduler. Like for ETL's or something.
 
