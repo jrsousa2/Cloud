@@ -1,3 +1,6 @@
+Databricks is wrapper around open source Spache Spark, an engine that allows
+parallel processing of Big Data.
+
 # When working with a cluster of machines, the machine that submits
 # the codes is the driver machine (or worker/master)
 # The master is the orchestrator that splits the workload among the workers
@@ -46,6 +49,7 @@ nums = list(range(0,1000001))
 # sc is short for SparkContext
 
 # The below syntax won't work with a serverless Notebook in Databricks
+# In databricks with an attached cluster sc should be recognized right away
 # Needs to create and attach a cluster for this to work
 nums_rdd = sc.parallelize(nums)
 

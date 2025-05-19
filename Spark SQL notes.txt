@@ -1,0 +1,26 @@
+Spark SQL is a module in Apache Spark that lets you query structured data using SQL or DataFrame API.
+
+You have schema on read for SQL support. 
+
+It runs on the file like it was a database, but it's not a db actually. It can run massive queries fast.
+
+It's not a database. You don't have functions or procedures.
+
+You don't need to store the data in tables, they can be left as is (in Blob storage) and be queried with usual SQL syntax like it was a database, but it's only really the Spark engine which is fast.
+
+Does not support joins between files it seems (they are not relat db's).
+
+There's limited support for security, revoke and grant access.
+
+Spark SQL comes with support for 3 shells: Scala, Python and R.
+
+It seems there is SQL Metastore where the Spark SQL saves the Tables/Views (metadata of the files like they were db's).
+
+Delta lake is Spark's answer to RD functionality.
+Snowflake Redshit BigQuery Azure Synapse Analytics (these are Big Data/DW tools, they run on a cluster of multiple machines like Spark)
+
+Delta Lake used efficient storage format called Parquet, which Databricks and Snowflake also use.
+Parquet is a popular, efficient columnar storage file format used in big data processing.
+
+Delta Lake adds CRUD functionality: create, update and delete support. 
+It seems this capability works better if the data is stored in parquet format, but it's not strictly necessary.

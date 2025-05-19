@@ -51,7 +51,7 @@ I also created new Resource Group called RG_Pay_as_you_go.
 
 I've also created a new Databricks workspace under new RG RG_Pay_as_you_go and upgraded non-free subscription. Need to be careful to not incur charges for either the hardware resources (clusters, driver and worker machines, cores, sotrage, etc.)
 
-New Databricks workspace is called DB_wkspc_not_free
+New Databricks workspace is called DB_wkspc_pay
 
 But it's still not working though if Policy is unrestricted.
 
