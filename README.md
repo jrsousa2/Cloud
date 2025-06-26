@@ -3,7 +3,7 @@
 Quick references on usage of simple Snowflake commands such as snowsql and snowsight.
 <br>Ditto Databricks.
 
-**Below a reminder/compare of AWS, GCP and Azure services.**
+**Below a quick reminder/compare of AWS, GCP and Azure services.**
 
 
 | Category                | AWS                                           | GCP                                              | Azure                                |
