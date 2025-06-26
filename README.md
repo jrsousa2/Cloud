@@ -20,6 +20,7 @@ Quick references on usage of simple Snowflake commands such as snowsql and snows
 | Database - Relational    | RDS                                           | Cloud SQL                                        | Azure SQL Database                  |
 | Database - NoSQL         | DynamoDB                                      | Firestore / Cloud Bigtable                       | Azure Cosmos DB                     |
 | Data Warehouse           | Redshift                                      | BigQuery                                         | Azure Synapse Analytics             |
+| Serverless SQL Query    | Amazon Athena                                 | BigQuery                                        | Azure Synapse Analytics              |
 | Monitoring & Logging     | CloudWatch                                    | Cloud Monitoring & Logging                       | Azure Monitor                       |
 | Identity & Access        | IAM                                           | IAM                                              | Azure Active Directory        |
 | DevOps - CI/CD           | CodePipeline / CodeBuild                      | Cloud Build / Cloud Deploy                       | Azure DevOps / GitHub Actions       |
@@ -30,4 +31,3 @@ Quick references on usage of simple Snowflake commands such as snowsql and snows
 | Auto Scaling             | Auto Scaling Groups                           | Managed Instance Groups                          | Virtual Machine Scale Sets    |
 | API Management           | API Gateway                                   | API Gateway / Apigee                             | Azure API Management                |
 | ETL / Data Catalog      | AWS Glue                                       | Cloud Data Fusion                                | Azure Data Factory                   |
-| Serverless SQL Query    | Amazon Athena                                 | BigQuery                                        | Azure Synapse Analytics              |
