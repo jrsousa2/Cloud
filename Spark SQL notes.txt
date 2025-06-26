@@ -24,3 +24,21 @@ Parquet is a popular, efficient columnar storage file format used in big data pr
 
 Delta Lake adds CRUD functionality: create, update and delete support. 
 It seems this capability works better if the data is stored in parquet format, but it's not strictly necessary.
+
+################################################################################
+COMMANDS:
+Ctrl + Enter runs the cell
+Shift + Enter runs cells and moves to next cell
+
+create database mydb;
+
+show databases;
+
+These are not databases in the standard meaning. No rollback, no security, no trans logs.
+
+# Below just adds Properties to the info
+describe database extended mydb;
+
+alter database mydb set dbproperties (production=true);
+
+
