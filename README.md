@@ -30,4 +30,5 @@ Quick references on usage of simple Snowflake commands such as snowsql and snows
 | Infrastructure as Code   | CloudFormation                                | Deployment Manager / Terraform                   | Azure Resource Manager / Bicep|
 | Auto Scaling             | Auto Scaling Groups                           | Managed Instance Groups                          | Virtual Machine Scale Sets    |
 | API Management           | API Gateway                                   | API Gateway / Apigee                             | Azure API Management                |
-| ETL / Data Catalog      | AWS Glue                                       | Cloud Data Fusion                                | Azure Data Factory                   |
+| ETL / Data Catalog       | AWS Glue                                      | Cloud Data Fusion                                | Azure Data Factory                   |
+| Data Governance / Catalog| AWS Glue Data Catalog                         | Data Catalog                                     | Azure Purview                        |
